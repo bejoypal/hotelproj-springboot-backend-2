@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
-COPY ./target/ecom-webservice-0.0.1-SNAPSHOT.jar ecom-webservice-0.0.1-SNAPSHOT.jar
+COPY ./target/hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar
 CMD ["java" ,"-jar","hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar"]
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
@@ -8,7 +8,7 @@ RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 #  - -> docker image build -t <imagetagname> .
 
 #-> run container by using custom image
-# -> docker container run  --name <ecom-web-service> -p 8081:8081 -d <ecom-webservice>
+# -> docker container run  --name <hotelproj-springboot-backend-2> -p 8081:8081 -d <hotelproj-springboot-backend-2>
 
 
 #-> verify log 
