@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo '----------------- This is a build docker image phase ----------'
                 sh '''
-                    docker image build -t ecom-webservice .
+                    docker image build -t hotelproj-springboot-backend-2 .
                 '''
             }
         }
@@ -43,13 +43,13 @@ pipeline {
             steps {
                 echo '----------------- This is a docker deploment phase ----------'
                 sh '''
-                 (if  [ $(docker ps -a | grep ecom-webservice | cut -d " " -f1) ]; then \
-                        echo $(docker rm -f ecom-webservice); \
+                 (if  [ $(docker ps -a | grep hotelproj-springboot-backend-2 | cut -d " " -f1) ]; then \
+                        echo $(docker rm -f hotelproj-springboot-backend-2); \
                         echo "---------------- successfully removed ecom-webservice ----------------"
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name ecom-webservice -p 8081:8081 -d ecom-webservice
+            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8081:8081 -d hotelproj-springboot-backend-2
             '''
             }
         }
