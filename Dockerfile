@@ -1,8 +1,9 @@
-FROM openjdk:8-jdk
+#FROM openjdk:8-jdk
+FROM openjdk:11-jdk
 COPY ./target/hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar
 CMD ["java" ,"-jar","hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar"]
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
+EXPOSE 8081
 #-> Create a image for springboot webservice
 # -->  Dockerfile 
 #  - -> docker image build -t <imagetagname> .
