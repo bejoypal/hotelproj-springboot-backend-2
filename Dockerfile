@@ -2,7 +2,8 @@
 FROM openjdk:11-jdk
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install mysql-server -y
+RUN mysql --version
+RUN apt-get install mysql-server
 COPY ./target/hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar
 CMD ["java" ,"-jar","hotelproj-springboot-backend-2-0.0.1-SNAPSHOT.jar"]
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
