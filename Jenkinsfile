@@ -49,7 +49,7 @@ pipeline {
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8082:8081 -d hotelproj-springboot-backend-2
+            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8081:8082 -d hotelproj-springboot-backend-2
             '''
             }
         }
