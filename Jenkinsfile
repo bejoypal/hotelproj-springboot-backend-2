@@ -49,7 +49,7 @@ pipeline {
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8081:8082 hotelproj-springboot-backend-2
+            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8081:8082 --add-host host.docker.internal:host-gateway hotelproj-springboot-backend-2
             '''
             }
         }
